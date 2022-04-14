@@ -1,0 +1,16 @@
+require:
+ - rubocop-rails
+ - rubocop-rspec
+ - rubocop-rake
+ - rubocop-performance
+inherit_from:
+  - https://raw.githubusercontent.com/insales/code_style/master/ruby/rubocop.yml
+  - https://raw.githubusercontent.com/insales/code_style/master/ruby/rubocop_rails.yml
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.1.2
+  TargetRailsVersion: 7.0.2.3
+  Exclude:
+   - "bin/*"
+   - "db/schema.rb"

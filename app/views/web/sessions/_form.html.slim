@@ -1,0 +1,4 @@
+= form_with url: session_path, method: :post, data: { turbo: false } do |form|
+    = form.label :insales_subdomain, 'Адрес вашего магазина:'
+    = form.text_field :insales_subdomain
+    = form.submit 'Войти'

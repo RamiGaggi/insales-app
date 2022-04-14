@@ -1,0 +1,14 @@
+body
+  div
+    table#current_account_info border='1'
+      tr
+        td.name =  'ID'
+        td.field = @current_account.id
+      tr
+        td.name = 'insales_subdomain'
+        td.field = @current_account.insales_subdomain
+      tr
+        td.name = 'insales_id'
+        td.field = @current_account.insales_id
+
+= link_to 'Sign out', session_path, data: { 'turbo-method': :delete }

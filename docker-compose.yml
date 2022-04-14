@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    ports:
+      - "5002:3000"
+    volumes:
+      - .:/home/app/code:rw
+    command: bash -l -c 'entrypoint.sh'
+    tty: true
+    stdin_open: true
+    environment:
+      RAILS_ENV: development
+  postgres:
+    image: postgres:14.2-alpine
+    ports:
+      - "45532:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+
+volumes:
+  postgres_data:
