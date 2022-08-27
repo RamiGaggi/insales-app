@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# TODO: заготовка под API клиент InSales
 class Insales::ApiClient
   API_PATH = '/admin'
 
